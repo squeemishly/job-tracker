@@ -27,11 +27,11 @@ class JobsController < ApplicationController
   def edit
     @job = Job.find(params[:id])
     @company = @job.company
-    binding.pry
   end
 
   def update
-    @job = Job.create(job_params)
+    @job = Job.find(params[:id])
+    @job.update(job_params)
     redirect_to company_job_path(@job.company, @job)
   end
 
