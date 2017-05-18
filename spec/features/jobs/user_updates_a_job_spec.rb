@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "A user can update a job" do
-  pending
   it "when they click on the update button" do
+    pending
     company1 = Company.create(name: "afp enterprises")
     # company2 = Company.create(name: "xena corp")
     company1.jobs.create!(title: "Developer", description: "Yippee", level_of_interest: 50, city: "Denver")
