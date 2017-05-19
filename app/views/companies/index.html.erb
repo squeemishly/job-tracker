@@ -1,5 +1,7 @@
 <h3>All Companies</h3>
 
+<p><%= link_to "Add a New Company", new_company_path %></p>
+
 <% @companies.each do |company| %>
   <div class=company_<%= company.id %>>
     <%= link_to company.name, company_path(company) %><br>
