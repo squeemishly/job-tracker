@@ -5,6 +5,8 @@ describe "User edits an existing company" do
     company = Company.create!(name: "ESPN")
     visit edit_company_path(company)
 
+    expect(page).to have_css('h3', "Edit #{company.name} here!")
+
     fill_in "company[name]", with: "EA Sports"
     click_button "Update"
 

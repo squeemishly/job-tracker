@@ -5,6 +5,7 @@ describe "User creates a new company" do
     visit companies_path
 
     click_on "Add a New Company"
+    expect(page).to have_css('h3', "Create a new company here!")
 
     fill_in "company[name]", with: "ESPN"
     click_button "Create"

@@ -7,11 +7,11 @@ RSpec.describe "A user can edit a category" do
     visit categories_path
     click_on "Edit"
 
-    expect(page).to have_css('h1', "Edit NASA")
+    expect(page).to have_css('h3', "Edit NASA")
     fill_in "category[title]", with: "Space"
     click_on "Update Category"
 
-    expect(page).to have_css('h1', "Space")
+    expect(page).to have_css('h3', "Space")
     expect(page).to have_link('Return to Categories List', href: categories_path)
   end
 
@@ -21,11 +21,11 @@ RSpec.describe "A user can edit a category" do
     visit category_path(category)
     click_on "Edit"
 
-    expect(page).to have_css('h1', "Edit NASA")
+    expect(page).to have_css('h3', "Edit NASA")
     fill_in "category[title]", with: "Space"
     click_on "Update Category"
 
-    expect(page).to have_css('h1', "Space")
+    expect(page).to have_css('h3', "Space")
     expect(page).to have_link('Return to Categories List', href: categories_path)
   end
 end

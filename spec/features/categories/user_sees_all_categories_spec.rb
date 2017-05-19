@@ -7,7 +7,7 @@ RSpec.describe "A user sees a list of all categories" do
 
     visit categories_path
 
-    expect(page).to have_css('h1', "All Categories")
+    expect(page).to have_css('h3', "All Categories")
     expect(page).to have_link("Create a New Category", href: new_category_path)
     expect(page).to have_content("Cat Herder")
     expect(page).to have_content("Musician")

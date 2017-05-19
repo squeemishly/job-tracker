@@ -8,8 +8,8 @@ describe "User sees all companies" do
     visit companies_path
 
     expect(page).to have_link("Add a New Company", href: new_company_path)
-    expect(page).to have_link("View Categories", href: categories_path)
 
+    expect(page).to have_css('h3', "All Companies")
     expect(page).to have_content("ESPN")
     expect(page).to have_content("Disney")
   end
