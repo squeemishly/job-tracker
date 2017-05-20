@@ -1,15 +1,19 @@
 Title: <%= @job.title %>
-<br>
+<br />
 
 Description: <%= @job.description %>
-<br>
+<br />
 
 Level of Interest: <%= @job.level_of_interest %>
-<br>
+<br/ >
 
 City: <%= @job.city %>
-<br>
+<br />
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+<br />
+
+Category: <%= @job.category.title %>
+<br />
 
 <p><%= link_to "Update", edit_company_job_path(@job.company, @job) %></p>
