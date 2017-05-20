@@ -17,12 +17,12 @@ RSpec.describe "A user can update a job" do
     fill_in "job[title]", with: "Ass Kicker"
     fill_in "job[description]", with: "Most Visciously"
     fill_in "job[level_of_interest]", with: 70
-    fill_in "job[city]", with: "San Francisco"
+    # fill_in "job[city]", with: "San Francisco"
     click_on "Update Job"
 
     expect(page).to have_content "Ass Kicker"
     expect(page).to have_content "Most Visciously"
     expect(page).to have_content "70"
-    expect(page).to have_content "San Francisco"
+    # expect(page).to have_content "San Francisco"
   end
 end
