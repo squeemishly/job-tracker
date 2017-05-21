@@ -1,4 +1,12 @@
 <h3><%= @category.title %></h3>
 
+<h5>Jobs in <%= @category.title %> category</h5>
+<ul>
+  <% @category.jobs.each do |job| %>
+    <li><%= link_to job.title, company_job_path(job.company, job) %></li>
+  <% end %>
+</ul>
+
+
 <p><%= link_to "Edit", edit_category_path(@category) %><br />
 <%= link_to "Return to Categories List", categories_path %></p>
