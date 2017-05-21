@@ -20,4 +20,9 @@ RSpec.describe Category do
     expect(category).to be_valid
     expect(category2).to be_invalid
   end
+
+  it "has relationships" do
+    category = create(:category)
+    expect(category).to respond_to(:jobs)
+  end
 end
