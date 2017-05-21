@@ -12,6 +12,8 @@ describe "User creates a new job" do
     fill_in "job[city]", with: "Denver"
     select "Nursing", from: "job[category_id]"
 
+    expect(page).to have_link("Create a Category", href: new_category_path)
+
     click_button "Create"
 
     expect(current_path).to eq("/companies/#{company.id}/jobs/#{Job.last.id}")
