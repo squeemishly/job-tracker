@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "A user can delete a job" do
   it "from the jobs listings on a company page" do
     company = create(:company)
-    job = company.jobs.create!(title: "Developer", description: "Yippee", level_of_interest: 50, city: "Denver")
+    category = create(:category)
+    job = company.jobs.create!(title: "Developer", description: "Yippee", level_of_interest: 50, city: "Denver", category_id: category.id)
 
     visit company_path(company)
 

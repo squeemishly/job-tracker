@@ -11,5 +11,7 @@ FactoryGirl.define do
     city "Denver"
 
     company
+
+    category
   end
 end
