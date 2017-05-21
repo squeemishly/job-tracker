@@ -16,4 +16,18 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 Category: <%= @job.category.title %>
 <br />
 
+<h3>Comments:</h3>
+<ul>
+  <% @job.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+
+<h3>Add a Comment</h3>
+<%#= form_for [@job, @comment] do |f| %>
+  <%#= f.label :content %>
+  <%#= f.textfield :content %>
+  <%#= f.submit %>
+<%# end %>
+
 <p><%= link_to "Update", edit_company_job_path(@job.company, @job) %></p>
