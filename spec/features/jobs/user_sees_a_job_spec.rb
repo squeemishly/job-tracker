@@ -14,8 +14,9 @@ describe "User sees a specific job" do
   end
 
   scenario "a user can see comments on a specific job" do
-    company = Company.create!(name: "ESPN")
-    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
+    company = create(:company)
+    category = create(:category)
+    job = create(:job, category_id: category.id, company_id: company.id)
     comment = job.comments.create(content: "All is quiet on the western front")
 
     visit company_job_path(company, job)
