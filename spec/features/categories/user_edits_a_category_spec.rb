@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "A user can edit a category" do
   it "when they click edit from the home page" do
-    category = Category.create(title: "NASA")
+    category = create(:category)
 
     visit categories_path
     click_on "Edit"
 
-    expect(page).to have_css('h3', "Edit NASA")
+    expect(page).to have_css('h3', "Edit #{category.title}")
     fill_in "category[title]", with: "Space"
     click_on "Update Category"
 
@@ -16,12 +16,12 @@ RSpec.describe "A user can edit a category" do
   end
 
   it "when they click edit from the view page" do
-    category = Category.create(title: "NASA")
+    category = create(:category)
 
     visit category_path(category)
     click_on "Edit"
 
-    expect(page).to have_css('h3', "Edit NASA")
+    expect(page).to have_css('h3', "Edit #{category.title}")
     fill_in "category[title]", with: "Space"
     click_on "Update Category"
 

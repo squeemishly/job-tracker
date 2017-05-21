@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "A user can see a single category" do
   it "when they click ont he category name from the index" do
-    category = Category.create(title: "Science")
+    category = create(:category)
 
     visit categories_path
-    click_on "Science"
+    click_on category.title
 
     expect(page).to have_css('h3', text: category.title)
     expect(page).to have_link('Return to Categories List', href: categories_path)

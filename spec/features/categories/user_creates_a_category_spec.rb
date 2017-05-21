@@ -15,11 +15,11 @@ RSpec.describe "A user can create a new category" do
   end
 
   it "sends them back to the form if the user tries to create a category that already exists" do
-    Category.create(title: "Training")
+    category = create(:category)
 
     visit categories_path
     click_on "Create a New Category"
-    fill_in "category[title]", with: "Training"
+    fill_in "category[title]", with: category.title
     click_on "Create Category"
 
     expect(current_path).to eq(new_category_path)
