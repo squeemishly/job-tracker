@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :jobs, only: [:index, :create, :new, :destroy, :edit, :update]
+    resources :contacts, only: [:new, :create]
   end
 
   resources :jobs, only: [:show] do

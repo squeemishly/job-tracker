@@ -51,3 +51,11 @@ nav ul li a{
 .company, .category{
   margin: 10px;
 }
+
+.contact_info{
+  margin: 10px;
+}
+
+.contact_list{
+  margin: 0;
+}
