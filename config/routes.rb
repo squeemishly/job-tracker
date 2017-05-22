@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root 'companies#index'
 
   resources :companies do
-    resources :jobs
+    resources :jobs, only: [:index, :create, :new, :destroy, :edit, :update]
+  end
+
+  resources :jobs, only: [:show] do
+    resources :comments, only: [:show, :new, :create]
   end
 
   resources :categories, except: [:delete]
