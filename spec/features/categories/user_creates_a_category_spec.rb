@@ -6,7 +6,7 @@ RSpec.describe "A user can create a new category" do
 
     click_on "Create a New Category"
     expect(current_path).to eq(new_category_path)
-    expect(page).to have_css('h1', "Add a New Category")
+    expect(page).to have_css('h3', "Add a New Category")
 
     fill_in "category[title]", with: "Development"
     click_on "Create Category"

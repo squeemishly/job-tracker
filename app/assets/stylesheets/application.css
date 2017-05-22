@@ -43,3 +43,11 @@ nav ul li a{
   text-decoration: none;
   color: black;
 }
+
+.company-name{
+  margin: 0;
+}
+
+.company, .category{
+  margin: 10px;
+}

@@ -1,18 +1,20 @@
-<%= form_for [@company, @job] do |f| %>
-  <p><%= f.label :title %>
-  <%= f.text_field :title %></p>
+<table>
+  <%= form_for [@company, @job] do |f| %>
+    <tr><td><%= f.label :title %></td>
+    <td><%= f.text_field :title %></td></tr>
 
-  <p><%= f.label :description %>
-  <%= f.text_field :description %></p>
+    <tr><td><%= f.label :description %></td>
+    <td><%= f.text_field :description %></td></tr>
 
-  <p><%= f.label :level_of_interest %>
-  <%= f.number_field :level_of_interest %></p>
+    <tr><td><%= f.label :level_of_interest %></td>
+    <td><%= f.number_field :level_of_interest %></td></tr>
 
-  <p><%= f.label :city %>
-  <%= f.text_field :city %></p>
+    <tr><td><%= f.label :city %></td>
+    <td><%= f.text_field :city %></td></tr>
 
-  <p><%= f.label :category_id %>
-  <%= f.collection_select :category_id, Category.all, :id, :title, prompt: 'Select Category' %></p>
+    <tr><td><%= f.label :category_id %></td>
+    <td><%= f.collection_select :category_id, Category.all, :id, :title, prompt: 'Select Category' %></td></tr>
 
-  <p><%= f.submit %></p>
-<% end %>
+    <tr><%= f.submit %><tr>
+  <% end %>
+</table>

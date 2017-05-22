@@ -16,6 +16,9 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 Category: <%= @job.category.title %>
 <br />
 
+<p><%= link_to "Update", edit_company_job_path(@job.company, @job) %></p>
+<br />
+
 <h3>Comments:</h3>
 <ul>
   <% @job.comments.order(created_at: :desc).each do |comment| %>
@@ -30,5 +33,3 @@ Category: <%= @job.category.title %>
   <%= f.submit "Add a Comment" %>
 <% end %>
 <br />
-
-<p><%= link_to "Update", edit_company_job_path(@job.company, @job) %></p>
